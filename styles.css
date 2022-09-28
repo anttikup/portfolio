@@ -56,17 +56,16 @@ main {
 }
 
 section {
-    border: solid gray 1px;
-    border-radius: 1em;
+    /*border: solid gray 1px;
+    border-radius: 1em;*/
     margin-bottom: 1em;
     padding: 1em;
 }
 #welcome-section {
     min-height: 100vh;
     vertical-align: middle;
-    background-image: url(elise.jpg);
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/55/Red_Pink_Tile_Abstract_Magical_Fabric_Colorful_Background_11.jpg);
     background-position: 50% 0;
-    background-size: 110%;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -76,7 +75,7 @@ section {
 img {
     width: 100%;
     height: auto;
-     
+
 }
 
 .img-container {
@@ -101,10 +100,9 @@ h1, h2, h3 {
 }
 
 #grid {
-    display: flex;
-    text-align: justify;
-    flex-flow: row;
-    flex-wrap: wrap;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .box {
@@ -115,6 +113,7 @@ h1, h2, h3 {
     margin: 1em;
     display: inline-block;
     text-align: center;
+    background-color: whitesmoke;
 }
 
 .box:hover {
@@ -130,8 +129,15 @@ h1, h2, h3 {
     height: 200px;
 }
 
-@media screen and (maxwidth >= 700) {
-    
+@media only screen and (max-width: 700px) {
+  #grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 
+@media only screen and (max-width: 450px) {
+  #grid {
+    grid-template-columns: 1fr;
+  }
+}
